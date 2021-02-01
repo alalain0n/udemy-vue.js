@@ -9,6 +9,12 @@
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="maxNumber">最大人数</label>
+      <input id="maxNumber" type="number" v-model.number="eventData.title">
+      <p>{{eventData.title}}</p>
+    </div>
   </div>
 </template>
 
@@ -22,6 +28,10 @@ export default {
     return {
       number: 14,
       currentComponent: "Home",
+      eventData: {
+        title: "タイトル",
+        maxNumber: 0,
+      },
     };
   },
   components: {
@@ -36,7 +46,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>
-
